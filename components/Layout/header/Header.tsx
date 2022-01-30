@@ -1,9 +1,9 @@
 import { useAuth } from '@components/auth/hooks/useAuth';
 import Image from 'next/image';
 import Link from 'next/link';
-import Logo from '../logo';
+import { Logo } from '../logo/Logo';
 
-const Header = () => {
+export const Header = () => {
   const { session, signOut } = useAuth();
 
   return (
@@ -31,5 +31,3 @@ const Header = () => {
     </header>
   );
 };
-
-export default Header;

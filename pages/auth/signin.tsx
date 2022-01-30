@@ -1,8 +1,8 @@
-import Layout from "@components/layout/Layout";
-import { SignInButton } from "@components/auth/SignInButton";
-import { useAuth } from "@components/auth/hooks/useAuth";
-import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { Layout } from '@components/layout/Layout';
+import { SignInButton } from '@components/auth/SignInButton';
+import { useAuth } from '@components/auth/hooks/useAuth';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 export default function SignIn() {
   const { session } = useAuth();
@@ -10,9 +10,10 @@ export default function SignIn() {
 
   useEffect(() => {
     if (session) {
-      router.push("/");
+      router.push('/');
     }
   }, [session]);
+
   return (
     <Layout>
       <SignInButton />

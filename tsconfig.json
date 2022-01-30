@@ -23,6 +23,6 @@
       "@api/*": ["./api/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/cart/context/cartContext.tss"],
   "exclude": ["node_modules"]
 }
