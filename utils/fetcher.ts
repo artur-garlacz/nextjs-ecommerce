@@ -24,7 +24,7 @@ export async function fetcher<Schema extends AnySchema | null>(
   { method, body, config, schema }: FetcherConfig<Schema>,
 ) {
   try {
-    const response = await fetch(path, {
+    const response = await fetch('http://localhost:3000' + path, {
       ...config,
       headers: {
         'Content-Type': 'application/json',
@@ -44,6 +44,7 @@ export async function fetcher<Schema extends AnySchema | null>(
     }
     throw new ResponseError(response.statusText, response.status);
   } catch (err) {
+    console.log(err, ' err');
     if (err instanceof ResponseError) {
       throw err;
     }

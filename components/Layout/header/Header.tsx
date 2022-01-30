@@ -14,7 +14,7 @@ export const Header = () => {
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
             {session && session?.user?.image && (
               <>
-                <Image src={session.user.image} className="w-12 h-12 rounded-full" alt="profile" />
+                <img src={session.user.image} className="w-12 h-12 rounded-full" alt="profile" />
 
                 <button
                   onClick={() => signOut()}

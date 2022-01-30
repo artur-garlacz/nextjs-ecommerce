@@ -1,11 +1,11 @@
 import { dehydrate, QueryClient } from 'react-query';
 import type { GetServerSideProps } from 'next';
-import { Products } from '../components/products/Products';
-import { Checkout } from '../components/cart/Checkout';
+import { Products } from '@components/products/Products';
+import { Checkout } from '@components/cart/Checkout';
 import { getSession } from 'next-auth/react';
-import { getEnv } from '../utils/env';
-import { getProducts } from '../components/products/api/getProducts';
-import { Layout } from '../components/layout/Layout';
+import { getEnv } from '@utils/env';
+import { getProducts } from '@components/products/api/getProducts';
+import { Layout } from '@components/layout/Layout';
 
 export default function Home() {
   return (
@@ -22,17 +22,17 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   await queryClient.prefetchQuery('products', getProducts);
 
-  if (!session) {
-    return {
-      redirect: {
-        destination: '/',
-        permanent: false,
-      },
-      props: {
-        dehydratedState: dehydrate(queryClient),
-      },
-    };
-  }
+  // if (!session) {
+  //   return {
+  //     redirect: {
+  //       destination: '/',
+  //       permanent: false,
+  //     },
+  //     props: {
+  //       dehydratedState: dehydrate(queryClient),
+  //     },
+  //   };
+  // }
 
   return {
     props: {
