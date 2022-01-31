@@ -1,9 +1,11 @@
 import { useAuth } from '@components/auth/hooks/useAuth';
+import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { Logo } from '../logo/Logo';
 
 export const Header = () => {
   const { session, signOut } = useAuth();
+  const { t } = useTranslation();
 
   return (
     <header className="relative bg-white">
@@ -23,7 +25,7 @@ export const Header = () => {
                 </button>
               </>
             )}
-            {!session && <Link href="/auth/signin">Zaloguj się</Link>}
+            {!session && <Link href="/auth/signin">{t('login')} Zaloguj się</Link>}
           </div>
         </nav>
       </div>
