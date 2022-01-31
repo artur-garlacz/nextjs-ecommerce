@@ -6,17 +6,12 @@
       "plugin:react/recommended",
       "plugin:react-hooks/recommended",
       "plugin:jsx-a11y/strict",
-      "plugin:testing-library/recommended",
-      "plugin:jest-dom/recommended",
       "next",
       "next/core-web-vitals"
     ],
     "plugins": [
       "jsx-a11y",
-      "react-app",
       "react-hooks",
-      "jest-dom",
-      "testing-library",
       "@typescript-eslint",
       "prettier"
     ],

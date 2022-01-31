@@ -1,5 +1,4 @@
 import { useAuth } from '@components/auth/hooks/useAuth';
-import Image from 'next/image';
 import Link from 'next/link';
 import { Logo } from '../logo/Logo';
 
