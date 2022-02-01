@@ -8,7 +8,8 @@ type LayoutProps = {
 export const Layout = ({ children }: LayoutProps) => (
   <>
     <Header />
-    <main className="h-full w-full bg-white py-16 px-4 flex flex-col items-center justify-center">
+    <main className="h-full w-full max-w-7xl mx-auto sm:px-6 bg-white py-8 px-4 flex flex-col items-center justify-center">
+      <h1 className="font-semibold text-5xl text-left w-full">ACW* Search</h1>
       {children}
     </main>
   </>
