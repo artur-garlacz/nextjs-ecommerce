@@ -1,5 +1,6 @@
 import { Product } from './Product';
 import { useGetProducts } from './hooks/useGetProducts';
+import SearchField from '../advancedSearch/SearchField';
 
 export const Products = () => {
   const { data: products } = useGetProducts();

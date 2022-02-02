@@ -6,11 +6,14 @@ import { getSession } from 'next-auth/react';
 import { getEnv } from '@utils/env';
 import { getProducts } from '@components/products/api/getProducts';
 import { Layout } from '@components/layout/Layout';
+import { AdvancedSearch } from '@components/advancedSearch/AdvancedSearch';
 
 export default function Home() {
   return (
     <Layout>
-      <Products />
+      <AdvancedSearch>
+        <Products />
+      </AdvancedSearch>
       <Checkout />
     </Layout>
   );
