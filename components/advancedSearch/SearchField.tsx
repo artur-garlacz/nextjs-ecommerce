@@ -1,4 +1,4 @@
-import { Input } from '@components/ui/Input/Input';
+import Input from '@components/ui/Input';
 import { useAdvancedSearch } from './hooks/useAdvancedSearch';
 
 const SearchField = () => {
@@ -7,7 +7,7 @@ const SearchField = () => {
   return (
     <div>
       <Input
-        onChange={(e) => dispatch({ type: 'updateSearchQuery', payload: e.currentTarget.value })}
+        onChange={(e) => dispatch({ type: 'updateSearch', payload: e.currentTarget.value })}
         placeholder="Search products"
       />
     </div>

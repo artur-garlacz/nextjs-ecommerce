@@ -1,12 +1,11 @@
-import type Prisma from '@prisma/client';
 import type { Action, State } from '../types';
 
 export const searchReducer = (state: State, action: Action) => {
   switch (action.type) {
-    case 'updateSearchQuery': {
+    case 'updateSearch': {
       return {
         ...state,
-        searchQuery: action.payload,
+        search: action.payload,
       };
     }
     default: {

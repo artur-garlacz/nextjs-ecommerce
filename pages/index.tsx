@@ -23,7 +23,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const queryClient = new QueryClient();
   const session = await getSession(context);
 
-  await queryClient.prefetchQuery('products', getProducts);
+  // await queryClient.prefetchQuery('products', getProducts);
 
   // if (!session) {
   //   return {
