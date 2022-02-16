@@ -7,12 +7,14 @@ import { getEnv } from '@utils/env';
 import { getProducts } from '@components/products/api/getProducts';
 import { Layout } from '@components/layout/Layout';
 import { AdvancedSearch } from '@components/advancedSearch/AdvancedSearch';
+import { ScrollToTopArrow } from '@components/ui/ScrollToTop';
 
 export default function Home() {
   return (
     <Layout>
       <AdvancedSearch>
         <Products />
+        <ScrollToTopArrow />
       </AdvancedSearch>
       <Checkout />
     </Layout>
