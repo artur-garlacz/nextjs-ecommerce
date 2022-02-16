@@ -1,10 +1,11 @@
 import { fetcher } from '@utils/fetcher';
-import { productSchema, productsSchema } from '../utils/schemas';
+import { setPaginationSchema } from '@utils/itemSchema';
+import { productSchema } from '../utils/schemas';
 
-export const getProducts = async () => {
-  return await fetcher('/api/products', {
+export const getProducts = async (params?: string) => {
+  return await fetcher(`/api/products?${params}`, {
     method: 'GET',
-    schema: productsSchema,
+    schema: setPaginationSchema(productSchema),
   });
 };
 

@@ -6,11 +6,16 @@ import { getSession } from 'next-auth/react';
 import { getEnv } from '@utils/env';
 import { getProducts } from '@components/products/api/getProducts';
 import { Layout } from '@components/layout/Layout';
+import { AdvancedSearch } from '@components/advancedSearch/AdvancedSearch';
+import { ScrollToTopArrow } from '@components/ui/ScrollToTop';
 
 export default function Home() {
   return (
     <Layout>
-      <Products />
+      <AdvancedSearch>
+        <Products />
+        <ScrollToTopArrow />
+      </AdvancedSearch>
       <Checkout />
     </Layout>
   );
@@ -20,7 +25,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const queryClient = new QueryClient();
   const session = await getSession(context);
 
-  await queryClient.prefetchQuery('products', getProducts);
+  // await queryClient.prefetchQuery('products', getProducts);
 
   // if (!session) {
   //   return {

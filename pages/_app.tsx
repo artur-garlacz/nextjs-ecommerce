@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app';
 import { Hydrate, QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { SessionProvider } from 'next-auth/react';
-import 'tailwindcss/tailwind.css';
+import '../index.css';
 import { CartProvider } from '@components/cart/context/cartContext';
 
 export default function App({ Component, pageProps, err }: AppProps & { err: Error }) {

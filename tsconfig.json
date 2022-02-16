@@ -20,7 +20,8 @@
       "@utils/*": ["./utils/*"],
       "@appTypes/*": ["./types/*"],
       "@img/*": ["public/static/img/*"],
-      "@api/*": ["./api/*"]
+      "@api/*": ["./api/*"],
+      "@lib/*": ["./lib/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/cart/context/cartContext.tss"],

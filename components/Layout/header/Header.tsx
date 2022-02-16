@@ -1,28 +1,18 @@
 import { useAuth } from '@components/auth/hooks/useAuth';
 import Link from 'next/link';
 import { Logo } from '../logo/Logo';
+import DropdownMenu from './DropdownMenu';
 
 export const Header = () => {
-  const { session, signOut } = useAuth();
+  const { session } = useAuth();
 
   return (
-    <header className="relative bg-white">
+    <header className="relative bg-white border-b-1 border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <nav className="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+        <nav className="flex justify-between items-center py-2 md:justify-start md:space-x-10">
           <Logo />
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-            {session && session?.user?.image && (
-              <>
-                <img src={session.user.image} className="w-12 h-12 rounded-full" alt="profile" />
-
-                <button
-                  onClick={() => signOut()}
-                  className="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
-                >
-                  Wyloguj się
-                </button>
-              </>
-            )}
+            {session && session?.user?.image && <DropdownMenu userImage={session?.user?.image} />}
             {!session && <Link href="/auth/signin">Zaloguj się</Link>}
           </div>
         </nav>
