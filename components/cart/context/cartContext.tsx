@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useReducer, useContext, useMemo, useState } from 'react';
+import { ReactNode, createContext, useReducer, useMemo, useState } from 'react';
 import { cartReducer } from './reducers/cartReducer';
 import type { Action, State } from './types';
 

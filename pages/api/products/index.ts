@@ -11,6 +11,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     where: {
       name: {
         contains: typeof search === 'string' ? search : '',
+        mode: 'insensitive',
       },
     },
     skip: cursor !== '' ? 1 : 0,
@@ -25,16 +26,9 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     },
   });
 
-  console.log('Products: ', products.length);
-
-  if (products.length) {
-    res.status(200).json({
-      items: products,
-      nextId: products.length === LIMIT_ITEMS ? products[LIMIT_ITEMS - 1].id : undefined,
-    });
-    res.end();
-  } else {
-    res.status(404);
-    res.end();
-  }
+  res.status(200).json({
+    items: products,
+    nextId: products.length === LIMIT_ITEMS ? products[LIMIT_ITEMS - 1].id : undefined,
+  });
+  res.end();
 };

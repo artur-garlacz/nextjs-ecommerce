@@ -1,6 +1,6 @@
 import Button from '@components/ui/Button';
 import Input from '@components/ui/Input';
-import { SearchIcon } from '@heroicons/react/outline';
+import { FilterIcon } from '@heroicons/react/outline';
 import { useAdvancedSearch } from './hooks/useAdvancedSearch';
 
 const SearchField = () => {
@@ -14,8 +14,11 @@ const SearchField = () => {
         className="w-full pr-4"
       />
       <div>
-        <Button className="rounded-full w-12 h-12">
-          <SearchIcon color="white" className="w-5 h-5" />
+        <Button
+          className="rounded-full w-12 h-12"
+          onClick={() => dispatch({ type: 'toggleModal', payload: true })}
+        >
+          <FilterIcon color="white" className="w-5 h-5" />
         </Button>
       </div>
     </div>

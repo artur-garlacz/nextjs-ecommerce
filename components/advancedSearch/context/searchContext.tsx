@@ -1,20 +1,22 @@
-import { ReactNode, createContext, useReducer, useContext, useMemo, useState } from 'react';
+import { createContext, useReducer, useMemo } from 'react';
 import { searchReducer } from './reducers/searchReducer';
 import type { Action, State } from './types';
 
 type Dispatch = (action: Action) => void;
 type SearchProviderProps = { readonly children: React.ReactNode };
 
-export const SearchStateContext = createContext<{ state: State; dispatch: Dispatch } | undefined>(
-  undefined,
-);
-
 const initialState: State = {
-  searchQuery: '',
+  search: '',
   displayMethod: 'grid',
   sortMethod: 'asc',
+  isOpenModal: false,
   filters: [],
 };
+
+export const SearchStateContext = createContext<{ state: State; dispatch: Dispatch }>({
+  state: initialState,
+  dispatch: () => {},
+});
 
 export const AdvancedSearchProvider = ({ children }: SearchProviderProps) => {
   const [state, dispatch] = useReducer(searchReducer, initialState);

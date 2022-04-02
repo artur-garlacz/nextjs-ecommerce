@@ -30,6 +30,7 @@ export const Button = <T extends ElementType = 'button'>({
         'flex justify-center items-center',
         className,
       ),
+      ...props,
     },
     children,
   );
